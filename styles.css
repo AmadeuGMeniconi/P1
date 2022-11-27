@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +11,7 @@
 }
 
 body {
-    /* border: 2px black solid; */
     font-family: Open Sans, Arial, sans-serif;
-    font-size: 14px;
     color: #666;
     background-color: #fff;
     line-height: 1.7em;
@@ -20,9 +19,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+section {
+    /* border: red dashed 2px; */
+}
+
 /*#region Header*/
 #main-header {
-    /* border: 2px black dashed; */
     background-color: #fff;
     position: fixed;
     top: 0;
@@ -39,8 +41,13 @@ body {
 }
 
 #logo-container {
-    width: 400px;
-    margin: 0 auto;
+    flex: 4;
+    margin-left: 8rem;  
+}
+
+#logo {
+    width: 480px;
+    transition: all 300ms;
 }
 
 #header-menu-nav-container {
@@ -52,13 +59,15 @@ body {
 }
 
 #header-menu {
+    flex: 5;
     display: flex;
+    justify-content: center;
     flex-direction: row;
 }
 
 #header-menu li {
-    font-size: 1.5em;
-    margin: 0 2rem;
+    font-size: 1.3em;
+    margin: 0 1.4rem;
 }
 
 #header-menu a {
@@ -68,11 +77,18 @@ body {
 
 #main-content {
     margin-top: 8rem;
-    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-#title-screen {
-    
+.hero-banner {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+    align-items: stretch;
+    /* position: absolute; */
 }
 
 .media-wrapper {
@@ -83,24 +99,14 @@ body {
     overflow: hidden;
     display: block;
     z-index: -1;
-    /* pointer-events: none; */
-    /* transition: display .3s; */
 }
 
 .media-wrapper video {
-    overflow: hidden;
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
-.overlay-container {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: stretch;
-    position: absolute;
-}
-
-.overlay-title {
+.main-title {
     flex: 5;
     background-color: rgba(22,24,47,0.6);
     padding-top: 10vw;
@@ -109,74 +115,79 @@ body {
     padding-left: 6vw;
 }
 
-.overlay-title-text {
-    overflow: hidden;
+.main-title-text {
     position: relative;
-
 }
 
-.overlay-title-shape {
+.main-title-shape {
     position: absolute;
     height: 100%;
-    width: 1rem;
+    width: 0.9rem;
     background-color: #36b0c9;
-
 }
 
-.overlay-title-text h1 {
+.main-title-text h1 {
     color: #fff;
     font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
     font-weight: 700;
     font-size: 7em;
     line-height: 1.1em;
-    margin-left: 3rem;
-    padding:  0 0 1rem 0;
+    margin-left: 2.4rem;
+    padding: 0 0 1rem 0;
 }
 
-.overlay-title-button {
+.main-title-button {
     margin-top: 6rem;
 }
 
-.overlay-title-button button {
-    padding: 1.8rem;
+.main-title-button a {
+    padding: 2rem 2.3rem;
     color: #fff;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.3em;
     font-size: 1.5em;
     font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     background-color: #36b0c9;
 }
-   
-.overlay-list {
+
+.hero-banner-list {
     flex: 2;
     background-color: rgba(22,24,47,0.8);
 }
 
 .list-container {
     justify-content: center;
+    height: 100%;
 
 }
 
 .list-container ul {
-    padding: 8rem 4rem;
-}
-
-.list-container li img {
-    width: 4rem;
-    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 4rem 4rem;
 }
 
 .list-container li {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    
+    padding: 2rem 0;
 }
 
 .list-container li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    
+}
+
+.list-container li a img {
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.list-container li a p {
     font-size: 1.8em;
     color: #fff;
     font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
@@ -184,3 +195,192 @@ body {
     line-height: 1.2em;
     margin-left: 1.5rem;
 }
+
+.umais {
+    display: flex;
+    background-color: #16182f;
+    flex-direction: row;
+    height: 80vh;
+    box-shadow: 0px 0px 18px 12px rgb(22 24 47 / 38%);
+    
+}
+
+.umais .text {
+    display: flex;
+    flex-direction: column;
+    padding:  8rem 5rem;
+    flex: 33%;
+}
+
+.umais .text h2 {
+    font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 700;
+    font-size: 4em;
+    line-height: 1.3em;
+    color: #fff;
+    flex: 15;
+    padding-bottom: 2rem;
+}
+
+.umais .text .title-shape {
+    width: 5rem;
+    background-color: #36b0c9;
+    flex: 1;
+    margin-bottom: 5rem;
+}
+
+.umais .text div {
+    flex: 79;
+}
+
+.umais .text p {
+    font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 2em;
+    color: #fff;
+    padding-bottom: 1em;
+    padding-bottom: 1rem;
+}
+
+.umais .text strong {
+    font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 600;
+    color: #fff;
+    padding-bottom: 1em;
+    padding-bottom: 1rem;
+}
+
+.umais .hub {
+    flex: 67%;
+    display: flex;
+    flex-direction: column;
+}
+
+.umais .hub .bg-image {
+    flex: 4;
+    overflow: hidden;
+}
+
+.umais .hub .bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.umais .buttons-container {
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.umais .buttons-container a,div {
+    flex: 50%;
+}
+
+.umais .buttons-container div {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.umais .buttons-container .button-plataforma-umais {
+    text-align: center;
+    transform: translateY(-50%) translateX(50%);
+    top: 50%;
+    right: 50%;
+    position: absolute;
+    padding: 1.6rem 3rem;
+    border: black solid 0.4rem;
+}
+
+.umais .buttons-container .button-plataforma-umais h2 {
+    font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    letter-spacing: 0.3em;
+    color: black;
+}
+
+.umais .buttons-container .button-portal-umais {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #36b0c9;
+}
+
+.umais .buttons-container .button-portal-umais h2 {
+    text-align: center;
+    height: fit-content;
+    font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 700;
+    font-size: 4.2em;
+    color: #fff;
+}
+
+#about {
+        overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #16182fe7;
+}
+
+
+#about .bg-image {
+    min-width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+#about div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+    font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+}
+
+#about div span p {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 2.3em;
+    font-weight: 200;
+    line-height: 1.5em;
+    color: #fff;
+}
+
+#about div h3 strong {
+    margin-top: 3rem;
+    font-size: 2.5em;
+    color: #fff;
+}
+
+#about div p {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 1.5em;
+    font-weight: 200;
+    line-height: 2em;
+    color: #fff;
+}
+
+#about div ul li {
+    font-size: 1.5em;
+    font-weight: 200;
+    line-height: 1.7em;
+    color: #fff;
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
